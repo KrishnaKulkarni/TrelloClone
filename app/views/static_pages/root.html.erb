@@ -1,6 +1,12 @@
 <div id="content" class="container"></div>
 <script>
-  $(function () {
-    // put stuff here
+  var $content = $("#content");
+  new Trellino.Routers.Boards({
+    $rootEl: $content
   });
+  Backbone.history.start();
+
+  // $(function () {
+//     // put stuff here
+//   });
 </script>

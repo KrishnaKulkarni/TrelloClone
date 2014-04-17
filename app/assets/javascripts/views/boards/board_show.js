@@ -16,9 +16,11 @@ Trellino.Views.BoardShow = Backbone.View.extend({
 
   deleteBoard: function(){},
 
+  // options : lists, members, model
   initialize: function(options){
-    this.cards = options.cards;
-    this.members = options.members;
+    //add listeners for lists and members collections
+    //this.lists = this.model.lists();
+    //this.members = this.model.members();
     this.subviews = [];
   },
 
@@ -31,17 +33,17 @@ Trellino.Views.BoardShow = Backbone.View.extend({
 
     var that = this;
 
-    this.cards.each(function(card){
-      var view = new Trellino.Views.CardShow({ model: card });
-      that.subviews.push(view);
-      that.$el.children(".card-list").append(view.render().$el);
-    });
-
-    this.members.each(function(member){
-      var view = new Trellino.Views.MemberShow({ model: member });
-      that.subviews.push(view);
-      that.$el.children(".member-list").append(view.render().$el);
-    });
+    // this.lists.each(function(list){
+    //   var view = new Trellino.Views.ListShow({ model: list });
+    //   that.subviews.push(view);
+    //   that.$el.find(".list-list").append(view.render().$el);
+    // });
+    //
+    // this.members.each(function(member){
+    //   var view = new Trellino.Views.MemberShow({ model: member });
+    //   that.subviews.push(view);
+    //   that.$el.find(".member-list").append(view.render().$el);
+    // });
 
     return this;
   }
