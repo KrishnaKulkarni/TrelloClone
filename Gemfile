@@ -20,11 +20,16 @@ group :development do
   gem 'binding_of_caller'
 end
 
+gem 'debugger'
+gem 'pry-rails'
+
 gem 'jquery-ui-rails'
 gem 'backbone-on-rails'
-gem 'rake', '10.1.1'
+gem 'rake', '10.2.2'
 gem 'bcrypt'
 
 group :development, :test do
   gem 'rspec-rails'
 end
+
+gem 'serialize_json-rails'
