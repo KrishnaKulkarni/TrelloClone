@@ -2,6 +2,7 @@ Trellino.Routers.Boards = Backbone.Router.extend({
 
   initialize: function(options){
     this.$rootEl = options.$rootEl;
+    this.boards = options.boards;
   },
 
   routes: {
@@ -13,26 +14,30 @@ Trellino.Routers.Boards = Backbone.Router.extend({
 
   show: function(id){
     //make boardShow view with the id
-    var boards = new Trellino.Collections.Boards();
-    var that = this;
 
-    var success = function(){
-      var board = boards.get(id);
+    //var boards = new Trellino.Collections.Boards();
+    //var that = this;
+
+    //var success = function(){
+     // var board = that.boards.get(id);
       var view = new Trellino.Views.BoardShow({
-        model: board
+        model: this.boards.get(id)
       });
       // appends it to root
       that.$rootEl.html(view.render().$el);
-    };
+      //};
 
-    boards.fetch({
-      success: success
-    });
+    // boards.fetch({
+ //      success: success
+ //    });
 
   },
 
   index: function(){
-    //
+
+    var boards = new Trellino.Collections.Boards();
+
+
 
   },
 
